@@ -4,6 +4,9 @@
         "cstdio": "c",
         "*.tcc": "c",
         "complex": "c",
-        "fstream": "c"
+        "fstream": "c",
+        "string.h": "c",
+        "dirent.h": "c",
+        "types.h": "c"
     }
 }
