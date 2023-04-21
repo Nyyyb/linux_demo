@@ -33,14 +33,12 @@
 #include <dirent.h>
 #include <stdio.h>
 #include <string.h>
-
+#include <stdlib.h>
 
 // 读取某个目录下所有的普通文件的个数
 
 // 格式：./a.out lesson15
-
-
-
+int getFileNum(const char *path);
 int main(int argc, char *argv[])
 {
     // 打开一个目录
@@ -49,20 +47,25 @@ int main(int argc, char *argv[])
         printf("./%s dirname", argv[0]);
         return -1;
     }
+    printf("argv[1] = %s\n", argv[1]);
+    int num = getFileNum(argv[1]);
 
+    printf("普通文件的个数为：%d\n", num);
     return 0;
 }
 
 // 用于获取目录下所有普通文件的个数
 int getFileNum(const char *path)
 {
-    static count = 0;
+    static int count = 0;
     // 打开目录
+    printf("path = %s\n", path);
     DIR *dir = opendir(path);
     if (dir == NULL)
     {
         perror("opendir error");
-        return -1;
+        // return -1;
+        exit(0);
     }
     struct dirent *ptr;
     while ((ptr = readdir(dir)) != NULL)
@@ -72,14 +75,19 @@ int getFileNum(const char *path)
         {
             continue;
         }
-        if(ptr->d_type == DT_DIR)
+        if (ptr->d_type == DT_DIR)
         {
-            char * newpath = 
+            char newpath[256];
+            sprintf(newpath, "%s/%s", path, dname);
+            getFileNum(newpath);
             // 目录
         }
-        if(ptr->d_type == DT_REG)
+        if (ptr->d_type == DT_REG)
         {
+            count++;
             // 普通文件
         }
     }
+    closedir(dir);
+    return count;
 }
