@@ -7,6 +7,7 @@
         "fstream": "c",
         "string.h": "c",
         "dirent.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "fcntl.h": "c"
     }
 }
