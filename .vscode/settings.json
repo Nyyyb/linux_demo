@@ -8,6 +8,8 @@
         "string.h": "c",
         "dirent.h": "c",
         "types.h": "c",
-        "fcntl.h": "c"
+        "fcntl.h": "c",
+        "cstdlib": "c",
+        "stdlib.h": "c"
     }
 }
