@@ -42,6 +42,7 @@
     * 
 */
 #include <stdio.h>
+#define __USE_POSIX
 #include <signal.h>
 #include <stdlib.h>
 
