@@ -26,6 +26,8 @@
 #include <stdio.h>
 #include <sys/time.h>
 #include <stdlib.h>
+// #define __USE_POSIX 1
+// #define __USE_MISC 1
 #include <signal.h>
 
 void sigalrm_handler(int signo)
