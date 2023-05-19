@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <string.h>
-#define __USE_MISC 1
+// #define __USE_MISC 1
 #include <unistd.h>
 
 #define ThreadNum 3
