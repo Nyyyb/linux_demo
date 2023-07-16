@@ -2,6 +2,6 @@
 
 int main()
 {
-    FILE 
+    // FILE
     return 0;
 }
