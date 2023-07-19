@@ -17,6 +17,10 @@
         "__sigset_t.h": "c",
         "unistd.h": "c",
         "pthread.h": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "inet.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c"
     }
 }
